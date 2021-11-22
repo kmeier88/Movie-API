@@ -10,7 +10,31 @@ let topMovies = [
         title: Moon
     },
     {
-        title: 
+        title: Dargeeling Limited
+    },
+    {
+        title: Ghostbusters
+    },
+    {
+        title: Die Hard
+    },
+    {
+        title: Up
+    },
+    {
+        title: Dune
+    },
+    {
+        title: Casino Royale
+    },
+    {
+        title: Titane
+    },
+    {
+        title: Rugrats movie
+    },
+    {
+        title: The Iron Giant
     }
 ]
 
