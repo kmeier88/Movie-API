@@ -7,34 +7,34 @@ app.use(morgan('common'));
 
 let topMovies = [
     {
-        title: Moon
+        title: 'Moon'
     },
     {
-        title: Dargeeling Limited
+        title: 'Dargeeling Limited'
     },
     {
-        title: Ghostbusters
+        title: 'Ghostbusters'
     },
     {
-        title: Die Hard
+        title: 'Die Hard'
     },
     {
-        title: Up
+        title: 'Up'
     },
     {
-        title: Dune
+        title: 'Dune'
     },
     {
-        title: Casino Royale
+        title: 'Casino Royale'
     },
     {
-        title: Titane
+        title: 'Titane'
     },
     {
-        title: Rugrats movie
+        title: 'Rugrats movie'
     },
     {
-        title: The Iron Giant
+        title: 'The Iron Giant'
     }
 ]
 
