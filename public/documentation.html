@@ -1,3 +1,127 @@
-Movie API
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Movie API</h1>
+    <p>This is an API that will return data about movies and allow users to create accounts and keep track of favorite movies.</p>
 
-This is an API that will return data about movies and allow users to create accounts and keep track of favorite movies.
+    <table>
+        <tr>
+            <th>Description of Endpoint</th>
+            <th>Endpoint URL</th>
+            <th>Method Type</th>
+            <th>Query Parameters</th>
+            <th>Format of Request</th>
+            <th>Format of Response</th>
+        </tr>
+        <tr>
+            <td>Return a list of ALL movies to the user</td>
+            <td>/movies</td>
+            <td>GET</td>
+            <td>Query Paramters IDK</td>
+            <td>None</td>
+            <td>A JSON object holding a list of all the movies</td>
+        </tr>
+        <tr>
+            <td>Return data about a single movie by title to the user</td>
+            <td>/movies/[Title]</td>
+            <td>GET</td>
+            <td>Query Paramters IDK</td>
+            <td>None</td>
+            <td>A JSON object holding data about a single movie, containing a description, genre, director, image URL. Example: <br>
+                { <br>
+                title: "Legally Blonde", <br>
+                description: "This movie isn't very good", <br>
+                genre: "comedy (kinda)", <br>
+                director: "Who cares", <br>
+                image URL: "image" <br>
+                {</td>
+        </tr>
+        <tr>
+            <td>Return data about a genre by title of movie</td>
+            <td>/movies/[Title]/[Genre]</td>
+            <td>GET</td>
+            <td>Query Paramters IDK</td>
+            <td>None</td>
+            <td>A JSON object holding data about the genre of the movie by title. Example: <br>
+                { <br>
+                title: "Legally blonde", <br>
+                genre: "comedy" <br>
+                }</td>
+        </tr>
+        <tr>
+            <td>Return data about a director (bio, birth year, death year) by name</td>
+            <td>/movies/[Director]</td>
+            <td>GET</td>
+            <td>Query Paramters IDK</td>
+            <td>None</td>
+            <td>A JSON object holding data about a director. Example: <br>
+                { <br>
+                director: "Julio Martinez", <br>
+                bio: "Julio is a wicked good director", <br>
+                birth year: "1969", <br>
+                death year: "N/A", <br>
+                }</td>
+        </tr>
+        <tr>
+            <td>Allow new users to register</td>
+            <td>/users</td>
+            <td>POST</td>
+            <td>Query Paramters IDK</td>
+            <td>A JSON object holding data about the new user <br> 
+            { <br>
+            name: "Jerry Seinfeld", <br>
+            DOB: "4/20/69" <br>
+             } </td>
+            <td>A JSON object holding data about the new user that was added, including a username. Example: <br> <br>
+                { <br>
+                username: "JS42069", <br>
+                name: "Jerry Seinfeld", <br>
+                DOB: "4/20/69" <br>
+                } </td>
+        </tr>
+        <tr>
+            <td>Allow users to update their user info (username)</td>
+            <td>/users/[Username]</td>
+            <td>PUT</td>
+            <td>Query Paramters IDK</td>
+            <td>None</td>
+            <td>Text showing that the username has been updated</td>
+        </tr>
+        <tr>
+            <td>Allow users to add a movie to ther list of favorites</td>
+            <td>/users/[Favorites]</td>
+            <td>PUT</td>
+            <td>Query Paramters IDK</td>
+            <td>None</td>
+            <td>Text saying that a movie has been added</td>
+        </tr>
+        <tr>
+            <td>Allow users to remove a movie from their list of favorites</td>
+            <td>/users/[Favorites]</td>
+            <td>DELETE</td>
+            <td>Query Paramters IDK</td>
+            <td>None</td>
+            <td>Text showing that a movie has been removed from their list of favorites</td>
+        </tr>
+        <tr>
+            <td>Allow existing users to deregister</td>
+            <td>/users</td>
+            <td>DELETE</td>
+            <td>Query Paramters IDK</td>
+            <td>None</td>
+            <td>Text showing that the user has been deregistered</td>
+        </tr>
+    </table>
+
+</body>
+</html>
+
+
+
