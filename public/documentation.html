@@ -24,7 +24,7 @@
             <td>Return a list of ALL movies to the user</td>
             <td>/movies</td>
             <td>GET</td>
-            <td>Query Paramters IDK</td>
+            <td>None</td>
             <td>None</td>
             <td>A JSON object holding a list of all the movies</td>
         </tr>
@@ -32,7 +32,7 @@
             <td>Return data about a single movie by title to the user</td>
             <td>/movies/[Title]</td>
             <td>GET</td>
-            <td>Query Paramters IDK</td>
+            <td>[Title]</td>
             <td>None</td>
             <td>A JSON object holding data about a single movie, containing a description, genre, director, image URL. Example: <br>
                 { <br>
@@ -47,7 +47,7 @@
             <td>Return data about a genre by title of movie</td>
             <td>/movies/[Title]/[Genre]</td>
             <td>GET</td>
-            <td>Query Paramters IDK</td>
+            <td>[Genre], [Title]</td>
             <td>None</td>
             <td>A JSON object holding data about the genre of the movie by title. Example: <br>
                 { <br>
@@ -57,9 +57,9 @@
         </tr>
         <tr>
             <td>Return data about a director (bio, birth year, death year) by name</td>
-            <td>/movies/[Director]</td>
+            <td>/movies/director/[Director]</td>
             <td>GET</td>
-            <td>Query Paramters IDK</td>
+            <td>[Director], [Bio], [Birth year], [Death year]</td>
             <td>None</td>
             <td>A JSON object holding data about a director. Example: <br>
                 { <br>
@@ -73,7 +73,7 @@
             <td>Allow new users to register</td>
             <td>/users</td>
             <td>POST</td>
-            <td>Query Paramters IDK</td>
+            <td>[Username], [DOB]</td>
             <td>A JSON object holding data about the new user <br> 
             { <br>
             name: "Jerry Seinfeld", <br>
@@ -90,7 +90,7 @@
             <td>Allow users to update their user info (username)</td>
             <td>/users/[Username]</td>
             <td>PUT</td>
-            <td>Query Paramters IDK</td>
+            <td>[Username]</td>
             <td>None</td>
             <td>Text showing that the username has been updated</td>
         </tr>
@@ -98,7 +98,7 @@
             <td>Allow users to add a movie to ther list of favorites</td>
             <td>/users/[Favorites]</td>
             <td>PUT</td>
-            <td>Query Paramters IDK</td>
+            <td>[Favorites]</td>
             <td>None</td>
             <td>Text saying that a movie has been added</td>
         </tr>
@@ -106,7 +106,7 @@
             <td>Allow users to remove a movie from their list of favorites</td>
             <td>/users/[Favorites]</td>
             <td>DELETE</td>
-            <td>Query Paramters IDK</td>
+            <td>[Favorites]</td>
             <td>None</td>
             <td>Text showing that a movie has been removed from their list of favorites</td>
         </tr>
