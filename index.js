@@ -61,7 +61,7 @@ app.get('/movies/:title', (req, res) => {
 
 //Returns data about a genre by movie title
 
-app.get('/movies/:title/:genre', (req, res) => {
+app.get('/movies/genre/:name', (req, res) => {
   res.send ('Successful GET request returning data about a genre of movie by title');
 });
 
@@ -85,13 +85,13 @@ app.put('/users/:username', (req, res) => {
 
 //Allows users to add movie to list of favorites
 
-app.post('/users/:favorites', (req, res) => {
+app.post('/users/favoritesList/', (req, res) => {
   res.send ('Successfull POST request allowing users to add a movie to list of favorites');
 });
 
 //Allows users to remove movie from list of favorites
 
-app.delete('/users/:favorites', (req, res) => {
+app.delete('/users/favoritesList/:movieId', (req, res) => {
   res.send ('Successful DELETE request allowing users to remove a movie from list of favorites');
 });
 
