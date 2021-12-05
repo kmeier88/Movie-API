@@ -85,7 +85,7 @@ app.put('/users/:username', (req, res) => {
 
 //Allows users to add movie to list of favorites
 
-app.post('/users/favoritesList/', (req, res) => {
+app.post('/users/favoritesList/:movieId', (req, res) => {
   res.send ('Successfull POST request allowing users to add a movie to list of favorites');
 });
 
