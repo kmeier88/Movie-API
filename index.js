@@ -1,104 +1,194 @@
+const mongoose = require('mongoose');
+const Models = require('./models.js');
+
+const Movies = Models.Movie;
+const Users = Models.User;
+
+mongoose.connect('mongodb://localhost:27017/myFlixDB', {useNewUrlParser: true, useUnifiedTopology: true });
+
 const express = require('express');
 const morgan = require('morgan');
+const bodyParser = require('body-parser');
+const { repeat } = require('lodash');
 
 const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true}));
 
 app.use(morgan('common'));
 
-let topMovies = [
-    {
-        title: 'Moon'
-    },
-    {
-        title: 'Dargeeling Limited'
-    },
-    {
-        title: 'Ghostbusters'
-    },
-    {
-        title: 'Die Hard'
-    },
-    {
-        title: 'Up'
-    },
-    {
-        title: 'Dune'
-    },
-    {
-        title: 'Casino Royale'
-    },
-    {
-        title: 'Titane'
-    },
-    {
-        title: 'Rugrats movie'
-    },
-    {
-        title: 'The Iron Giant'
-    }
-]
 
-
-app.get('/movies', (req, res) => {
-    res.json(topMovies);
-});
+// default text response when at /
 
 app.get('/', (req, res) => {
-    res.send('This is my top 10 movie list!');
+    res.send('Welcome to MyFlix!');
 });
 
 //Returns list of all movies
 
 app.get('/movies', (req, res) => {
-  res.send ('Successful GET request returning data on all movies');
+  Movies.find()
+    .then((movies) => {
+      res.status(201).json(movies);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    });
+});
+
+// find all users
+
+app.get('/users', (req, res) => {
+  Users.find()
+    .then((users) => {
+      res.status(201).json(users);
+    })
+    .catch((err) => {
+      console.error.apply(err);
+      res.status(500).send('Error: ' + err);
+    });
 });
 
 //Returns data about a single movie by title
 
-app.get('/movies/:title', (req, res) => {
-  res.send ('Successful GET request returning data about a single movie by title');
+app.get('/movies/:Title', (req, res) => {
+  Movies.findOne({Title: req.params.Title})
+    .then((movie) => {
+      res.json(movie);
+    })
+    .catch((err) => {
+      console.error.apply(err);
+      res.status(500).send('Error: ' + err);
+    });
 });
 
-//Returns data about a genre by movie title
+//Get movie by Genre
 
 app.get('/movies/genre/:name', (req, res) => {
-  res.send ('Successful GET request returning data about a genre of movie by title');
+  Movies.find({'genre.name': req.params.name})
+    .then((genreName) => {
+      res.status(201).json(genreName)
+    })
+    .catch((err) => {
+      console.error.apply(err);
+      res.status(500).send('Error: ' + err);
+    });
 });
 
-//Returns data about a director
+//show a director's movies by name
 
-app.get('/movies/director/:director', (req, res) => {
-  res.send ('Successful GET request returning data about a director');
+app.get('/movies/directors/:Name', (req, res) => {
+  Movies.find({'director.name': req.params.name})
+    .then((directors) => {
+      res.status(201).json(director);
+    })
+    .catch((err) => {
+      console.error.apply(err);
+      res.status(500).send('Error: ' + err);
+    });
 });
 
 //Adds new user
 
 app.post('/users', (req, res) => {
-  res.send ('Successful POST request allowing a user to register');
-});
+  Users.findOne({ Username: req.body.Username})
+    .then((user) => {
+      if (user) {
+      return res.status(400).send(reg.body.Username + ' already exists')
+    } else {
+      Users.create({
+        Username: req.body.Username,
+        Password: req.body.Password,
+        Email: req.body.Email,
+        Birthday: req.body.Birthday,
+      })
+        .then((user) => {
+          res.status(201).json(user);
+        })
+        .catch((err) => {
+      console.error.apply(err);
+      res.status(500).send('Error: ' + err);
+    });
+  }
+})
 
-//Allows users to update their username
+//Allows users to update their info
 
 app.put('/users/:username', (req, res) => {
-  res.send ('Successful PUT request allowing users to update their username');
+  Users.findOneAndUpdate(
+    { Username: req.params.Username },
+    {
+      $set: {
+        Username: req.body.Username,
+        Password: req.body.Password,
+        Email: req.body.Email,
+        Birthday: req.body.Birthday
+      },
+    },
+    { new: true },
+    (err, updatedUser) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send('Error: ' + err);
+      } else {
+        res.json(updatedUser);
+      }
+    }
+  );
 });
 
 //Allows users to add movie to list of favorites
 
 app.post('/users/favoritesList/:movieId', (req, res) => {
-  res.send ('Successfull POST request allowing users to add a movie to list of favorites');
+  Users.findOneAndUpdate(
+    { Username: req.params.Username},
+    { $push: {Fav: req.params.MovieId} },
+    { new: true },
+    (err, updatedUser) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send('Error: ' + err);
+      } else {
+        res.json(updatedUser);
+      }
+    }
+  );
 });
 
 //Allows users to remove movie from list of favorites
 
 app.delete('/users/favoritesList/:movieId', (req, res) => {
-  res.send ('Successful DELETE request allowing users to remove a movie from list of favorites');
+  Users.findOneAndUpdate(
+    { Username: req.params.Username },
+    {$pull: { Fav: req.params.MovieId } },
+    { new: true },
+    (error, updateUser) => {
+      if (error) {
+        console.error(error);
+        res.status(500).send('Error: ' + err);
+      } else {
+        res.json(updatedUser);
+      }
+    }
+  );
 });
 
 //Allow existing user to deregister
 
 app.delete('/users/:username', (req, res) => {
-  res.send ('Sucessful DELETE request allowing users to deregister');
+  Users.findOneAndRemove({ Username: req.params.Username})
+    .then((user) => {
+      if (!user) {
+        res.status(400).send(req.params.Username + ' was not found.');
+      } else {
+        res.status(200).send(req.params.Username + ' was deleted.');
+      }
+    })
+    .catch((err) => {
+      console.error.apply(err);
+      res.status(500).send('Error: ' + err);
+    });
 });
 
 app.use(express.static('public'));
