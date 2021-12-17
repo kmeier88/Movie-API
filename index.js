@@ -55,7 +55,7 @@ app.get('/users', (req, res) => {
 app.get('/movies/:Title', (req, res) => {
   Movies.findOne({Title: req.params.Title})
     .then((movie) => {
-      res.json(movie);
+      res.status(201).json(movie);
     })
     .catch((err) => {
       console.error.apply(err);
@@ -65,10 +65,10 @@ app.get('/movies/:Title', (req, res) => {
 
 //Get movie by Genre
 
-app.get('/movies/genres/:name', (req, res) => {
+app.get('movies/genres/:name', (req, res) => {
   Movies.find({'Genre.Name': req.params.name})
-    .then((genreName) => {
-      res.status(201).json(genreName)
+    .then((movie) => {
+      res.status(201).json(movie.Genre);
     })
     .catch((err) => {
       console.error.apply(err);
@@ -145,7 +145,7 @@ app.put('/users/:username', (req, res) => {
 
 //Allows users to add movie to list of favorites
 
-app.post('/users/username/:movieId', (req, res) => {
+app.post('/users/:username/FavoriteMovies/:movieId', (req, res) => {
   Users.findOneAndUpdate(
     { Username: req.params.Username},
     { $push: {Fav: req.params.MovieId} },
@@ -163,7 +163,7 @@ app.post('/users/username/:movieId', (req, res) => {
 
 //Allows users to remove movie from list of favorites
 
-app.delete('/users/username/:movieId', (req, res) => {
+app.delete('/users/:username/FavoriteMovies/:movieId', (req, res) => {
   Users.findOneAndUpdate(
     { Username: req.params.Username },
     {$pull: { Fav: req.params.MovieId } },
