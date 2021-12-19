@@ -1,0 +1,251 @@
+let movie1 = {
+    Title: "Blade Runner 2049",
+    Description: "Young Blade Runner K's discover of a long-buried secret leads him to track down former Blade Runner Rick Deckard, who’s been missing for thirty years.",
+    Genre: {
+        Name: "Action",
+        Description: "An action film is a film genre in which the protagonist is thrust into a series of events that typically include violence, extended fighting, physical feats, rescues and frantic chases. Action films tend to feature a mostly resourceful hero struggling against incredible odds, which include life-threatening situations, a dangerous villain, or a pursuit which usually concludes in victory for the hero."
+    },
+    Director: {
+        Name: "Denis Villeneuve",
+        Bio: "Denis Villeneuve is a French-Canadian film director and writer. He started his career as a filmmaker at the National Film Board of Canada.",
+        Birth: "1967"
+    },
+    ImagePath: "https://www.imdb.com/title/tt1856101/mediaviewer/rm2677875712/?ref_=ext_shr_lnk",
+    Featured: true
+}
+
+db.movies.insertOne(movie1)
+
+ObjectId("61b33909591b2c49669fe113")
+
+
+let movie2 = {
+    Title: "Dune",
+    Description: "Feature adaptation of Frank Herbert’s science fiction novel about the son of a noble family entrusted with the protection of the most valuable asset and most vital element in the galaxy.",
+    Genre: {
+        Name: "Action",
+        Description: "An action film is a film genre in which the protagonist is thrust into a series of events that typically include violence, extended fighting, physical feats, rescues and frantic chases. Action films tend to feature a mostly resourceful hero struggling against incredible odds, which include life-threatening situations, a dangerous villain, or a pursuit which usually concludes in victory for the hero."
+    },
+    Director: {
+        Name: "Denis Villeneuve",
+        Bio: "Denis Villeneuve is a French-Canadian film director and writer. He started his career as a filmmaker at the National Film Board of Canada.",
+        Birth: "1967"
+    },
+    ImagePath: "https://www.imdb.com/title/tt1160419/mediaviewer/rm2910452737/?ref_=ext_shr_lnk",
+    Featured: false
+}
+db.movies.insertOne(movie2)
+
+ObjectId("61b4e665591b2c49669fe114")
+
+let movie3 = {
+    Title: "The Royal Tenenbaums",
+    Description: "The eccentric members of a dysfunctional family reluctantly gather under the same roof for various reasons.",
+    Genre: {
+        Name: "Comedy",
+        Description: "Comedy is a category of film which emphasizes humor. These films are designed to make the audience laugh through amusement. Films in this style traditionally have a happy ending. While many comic films are lighthearted stories with no intent other than to amuse, others contain political or social commentary."
+    },
+    Director: {
+        Name: "Wes Anderson",
+        Bio: "Wesley Wales Anderson was born in Houston, Texas. During childhood, Anderson began writing plays and making super-8 movies. He made short films in college, which eventually lead to feature films that received Oscar nominations.",
+        Birth: "1969"
+    },
+    ImagePath: "https://www.imdb.com/title/tt0265666/mediaviewer/rm1801805568/?ref_=ext_shr_lnk",
+    Featured: false
+}
+db.movies.insertOne(movie3)
+
+ObjectId("61b4e67c591b2c49669fe115")
+
+
+let movie4 = {
+    Title: "The Darjeeling Limited",
+    Description: "A year after their father’s funeral, three brothers travel across India by train in an attempt to bond with each other.",
+    Genre: {
+        Name: "Comedy",
+        Description: "Comedy is a category of film which emphasizes humor. These films are designed to make the audience laugh through amusement. Films in this style traditionally have a happy ending. While many comic films are lighthearted stories with no intent other than to amuse, others contain political or social commentary."
+    },
+    Director: {
+        Name: "Wes Anderson",
+        Bio: "Wesley Wales Anderson was born in Houston, Texas. During childhood, Anderson began writing plays and making super-8 movies. He made short films in college, which eventually lead to feature films that received Oscar nominations.",
+        Birth: "1969"
+    },
+    ImagePath: "https://www.imdb.com/title/tt0838221/mediaviewer/rm1461621504/?ref_=ext_shr_lnk",
+    Featured: true
+}
+db.movies.insertOne(movie4)
+
+ObjectId("61b4e68f591b2c49669fe116")
+
+
+let movie5 = {
+    Title: "Titane",
+    Description: "Following a series of unexplained crimes, a father is reunited with the son who has been missing for 10 years, or has he?",
+    Genre: {
+        Name: "Horror",
+        Description: "A horror film is one that seeks to elicit fear or disgust in its audience for entertainment purposes. Horror films additionally aim to evoke viewers' nightmares, revulsions, and terror of the unknown or the macabre. Initially inspired by literature, horror has existed as a film genre for more than a century."
+    },
+    Director: {
+        Name: "Julia Ducournau",
+        Bio: "Julia Ducournau is a French film director and screenwriter. Her first feature, Raw, won the coveted FIPRESCI prize at the 2016 Cannes Film Festival.",
+        Birth: "1983"
+    },
+    ImagePath: "https://www.imdb.com/title/tt10944760/mediaviewer/rm3767531521/?ref_=ext_shr_lnk",
+    Featured: true
+}
+db.movies.insertOne(movie5)
+
+ObjectId("61b4e6a2591b2c49669fe117")
+
+
+let movie6 = {
+    Title: "Moon",
+    Description: "Astronaut Sam Bell has a quintessentially personal encounter toward the end of his three-year stint on the moon, where he, working alongside his computer, GERTY, sends back to Earth parcels of a resource that has helped diminish our planet’s power problems.",
+    Genre: {
+        Name: "Sci-Fi",
+        Description: "Science fiction (or sci-fi) is a film genre that uses speculative, fictional science-based depictions of phenomena that are not fully accepted by mainstream science, such as extraterrestrial lifeforms, spacecraft, robots, cyborgs, interstellar travel, or other technologies."
+    },
+    Director: {
+        Name: "Duncan Jones ",
+        Bio: "Duncan Jones is a British film director and screenwriter.",
+        Birth: "1971"
+    },
+    ImagePath: "https://www.imdb.com/title/tt1182345/mediaviewer/rm1680837376/?ref_=ext_shr_lnk",
+    Featured: false
+}
+db.movies.insertOne(movie6)
+
+ObjectId("61b4e6b2591b2c49669fe118")
+
+
+let movie7 = {
+    Title: "Casino Royale",
+    Description: "After earning 00 status and a license to kill, secret agent James bond sets out on his first mission as 007. Bond must defeat a private banker funding terrorists in a high-stakes game of poker.",
+    Genre: {
+        Name: "Action",
+        Description: "An action film is a film genre in which the protagonist is thrust into a series of events that typically include violence, extended fighting, physical feats, rescues and frantic chases. Action films tend to feature a mostly resourceful hero struggling against incredible odds, which include life-threatening situations, a dangerous villain, or a pursuit which usually concludes in victory for the hero."
+    },
+    Director: {
+        Name: "Martin Campbell",
+        Bio: "Martin Campbell is a film director from New Zealand. He has directed multiple block buster action films.",
+        Birth: "1943"
+    },
+    ImagePath: "https://www.imdb.com/title/tt0381061/mediaviewer/rm3667992064/?ref_=ext_shr_lnk",
+    Featured: false
+}
+db.movies.insertOne(movie7)
+
+ObjectId("61b4e6c0591b2c49669fe119")
+
+
+let movie8 = {
+    Title: "Ex Machina",
+    Description: "A young programmer is selected to participate in a ground-breaking experiment in synthetic intelligence by evaluating the human qualities of a highly advanced humanoid A.I.",
+    Genre: {
+        Name: "Sci-Fi",
+        Description: "Science fiction (or sci-fi) is a film genre that uses speculative, fictional science-based depictions of phenomena that are not fully accepted by mainstream science, such as extraterrestrial lifeforms, spacecraft, robots, cyborgs, interstellar travel, or other technologies."
+    },
+    Director: {
+        Name: "Alex Garland ",
+        Bio: "Alex Garland is an English novelist, screenwriter, film producer, and director.",
+        Birth: "1970"
+    },
+    ImagePath: "https://www.imdb.com/title/tt0470752/mediaviewer/rm848491264/?ref_=ext_shr_lnk",
+    Featured: false
+}
+db.movies.insertOne(movie8)
+
+ObjectId("61b4e6d0591b2c49669fe11a")
+
+
+let movie9 = {
+    Title: "Get Out",
+    Description: "A young African-American visits his white girlfriend’s parents for the weekend, where his simmering uneasiness about their reception of him eventually reaches a boiling point.",
+    Genre: {
+        Name: "Horror",
+        Description: "A horror film is one that seeks to elicit fear or disgust in its audience for entertainment purposes. Horror films additionally aim to evoke viewers' nightmares, revulsions, and terror of the unknown or the macabre. Initially inspired by literature, horror has existed as a film genre for more than a century. "
+    },
+    Director: {
+        Name: "Jordan Peele",
+        Bio: "Jordan Peele is an American actor, writer, and producer. He gained popularity after starring in a sketch-comedy television show, before building status as a director.",
+        Birth: "1979"
+    },
+    ImagePath: "https://www.imdb.com/title/tt5052448/mediaviewer/rm1537293568/?ref_=ext_shr_lnk",
+    Featured: false
+}
+db.movies.insertOne(movie9)
+
+ObjectId("61b4e6df591b2c49669fe11b")
+
+
+let movie10 = {
+    Title: "14 Peaks: Nothing is Impossible ",
+    Description: "Fearless Nepali mountaineer, Nimsdai Purja embarks on a seemingly impossible quest to summit all 14 of the world’s 8,000-meter peaks in seven months.",
+    Genre: {
+        Name: "Documentary",
+        Description: "A documentary film or documentary is a non-fictional movie intended to document reality, primarily for the purposes of instruction, education, or maintaining a historical record."
+    },
+    Director: {
+        Name: "Torquil Jones",
+        Bio: "Torquil Jones is a producer, director and writer."
+    },
+    ImagePath: "https://www.imdb.com/title/tt14079374/mediaviewer/rm3082218241/?ref_=ext_shr_lnk",
+    Featured: true
+}
+db.movies.insertOne(movie10)
+
+ObjectId("61b4e6ee591b2c49669fe11c")
+
+
+
+
+
+let user1 = {
+    Username: "Kirk Meier",
+    Password: "test1",
+    email: "test1@gmail.com",
+    Birthday: new Date("1988-05-29"),
+    FavoriteMovies: [ObjectId("61b33909591b2c49669fe113"), ObjectId("61b4e665591b2c49669fe114"), ObjectId("61b4e67c591b2c49669fe115")]
+}
+
+db.users.insertOne(user1)
+
+let user2 = {
+    Username: "Tom Jones",
+    Password: "test2",
+    email: "test2@gmail.com",
+    Birthday: new Date("1975-04-05"),
+    FavoriteMovies: [ObjectId("61b4e67c591b2c49669fe115"), ObjectId("61b4e6ee591b2c49669fe11c"), ObjectId("61b4e68f591b2c49669fe116")]
+}
+
+db.users.insertOne(user2)
+
+let user3 = {
+    Username: "Beth Radley",
+    Password: "test3",
+    email: "test3@gmail.com",
+    Birthday: new Date("1996-10-14"),
+    FavoriteMovies: [ObjectId("61b4e68f591b2c49669fe116"), ObjectId("61b33909591b2c49669fe113"), ObjectId("61b4e6b2591b2c49669fe118")]
+}
+
+db.users.insertOne(user3)
+
+let user4 = {
+    Username: "Sara Smith",
+    Password: "test4",
+    email: "test4@gmail.com",
+    Birthday: new Date("2001-07-19"),
+    FavoriteMovies: [ObjectId("61b4e6b2591b2c49669fe118"), ObjectId("61b4e6a2591b2c49669fe117"), ObjectId("61b4e6c0591b2c49669fe119")]
+}
+
+db.users.insertOne(user4)
+
+let user5 = {
+    Username: "Jon Coulter",
+    Password: "test5",
+    email: "test5@gmail.com",
+    Birthday: new Date("1999-02-10"),
+    FavoriteMovies: [ObjectId("61b4e6c0591b2c49669fe119"), ObjectId("61b4e6d0591b2c49669fe11a"), ObjectId("61b4e6df591b2c49669fe11b")]
+}
+
+db.users.insertOne(user5)
