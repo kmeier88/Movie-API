@@ -65,7 +65,7 @@ app.get('/movies/:Title', (req, res) => {
 
 //Get movie by Genre
 
-app.get('movies/genres/:name', (req, res) => {
+app.get('/movies/genres/:name', (req, res) => {
   Movies.find({'Genre.Name': req.params.name})
     .then((movie) => {
       res.json(movie);
