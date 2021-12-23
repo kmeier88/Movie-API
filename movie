@@ -249,3 +249,14 @@ let user5 = {
 }
 
 db.users.insertOne(user5)
+
+
+heroku link:
+
+https://git.heroku.com/dry-wave-42496.git
+
+https://git.heroku.com/moviesrule.git
+
+mongoimport --uri mongodb+srv://kmeier:wyXNdnhL3qUerKH@cluster0.0hesb.mongodb.net/myFlixDB --collection movies --type json --file desktop/movies.json
+
+mongo "mongodb+srv://cluster0.0hesb.mongodb.net/myFlixDB" --username kmeier
