@@ -6,7 +6,9 @@ const Users = Models.User;
 
 // mongoose.connect('mongodb://localhost:27017/myFlixDB', {useNewUrlParser: true, useUnifiedTopology: true });
 
-mongoose.connect('process.env.CONNECTION_URI', {useNewUrlParser: true, useUnifiedTopology: true });
+//add process.env.connectionURI later
+
+mongoose.connect('mongodb+srv://kmeier:wyXNdnhL3qUerKH@cluster0.0hesb.mongodb.net/myFlixDB?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true });
 
 const express = require('express');
 const morgan = require('morgan');
